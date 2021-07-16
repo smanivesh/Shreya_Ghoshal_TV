@@ -3,7 +3,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:tiktok_clone/screens/data_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
-
+import 'dart:math';
 import 'package:tiktok_clone/screens/play_screen.dart';
 
 class NewHome extends StatefulWidget {
@@ -13,16 +13,30 @@ class NewHome extends StatefulWidget {
 
 class _NewHomeState extends State<NewHome> {
   List<DataModel> data = List<DataModel>();
+  void randIndexList(index) {
+    var randIndex = new List(data.length);
+    randIndex[i] = index;
+    i++;
+    for (int a = 0; a < data.length; a++) {
+      print(randIndex[i]);
+    }
+  }
+
+  int i = 0;
 
   getDataFromSheet() async {
     var raw = await http.get(
         'https://script.google.com/macros/s/AKfycbwu6L8V_wC0kyBzWaIuFjrx9dx8qRskCvz0TmUGccnpWi40fCo/exec');
 
     var jsonData = convert.jsonDecode(raw.body);
+    List<DataModel> tempData = List<DataModel>();
     jsonData.forEach((element) {
       DataModel dataModel = new DataModel();
       dataModel.videoUrl = element['video_url'];
-      data.add(dataModel);
+      tempData.add(dataModel);
+    });
+    setState(() {
+      data = tempData;
     });
   }
 
@@ -32,6 +46,22 @@ class _NewHomeState extends State<NewHome> {
     super.initState();
   }
 
+  //@override
+  //void next(){bool animation: true}
+
+  int generateRandomIndex() {
+    var random = new Random();
+    int index = random.nextInt(data.length);
+    randIndexList(index);
+    return index;
+  }
+
+  //function to change to next video. Function is called from youtube Meta data, onend youtube+player.dart
+  PlayScreen changeNextVideo() {
+    int index = generateRandomIndex();
+    return PlayScreen(src: data[index].videoUrl);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,10 +69,11 @@ class _NewHomeState extends State<NewHome> {
         child: Container(
           child: Swiper(
               itemCount: data.length,
-              duration: 2,
+              duration: 15000,
               scrollDirection: Axis.vertical,
-              // autoplay: true,
+              //  autoplay: true,
               itemBuilder: (BuildContext context, int index) {
+                index = generateRandomIndex();
                 return PlayScreen(
                   src: data[index].videoUrl,
                 );

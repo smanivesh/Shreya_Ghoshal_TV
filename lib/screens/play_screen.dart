@@ -57,22 +57,30 @@ class _PlayScreenState extends State<PlayScreen> {
         YoutubePlayer(
           controller: _controller,
           bottomActions: [
-            //  PlayPauseButton(),
-            ProgressBar(isExpanded: true),
+            // PlayPauseButton(),
+            ProgressBar(
+              isExpanded: true,
+            ),
             RemainingDuration(),
+            SizedBox(
+              height: 35,
+              width: 10,
+            ),
           ],
+          onEnded: (data) {
+            print("Next Video Started!");
+          },
         ),
-
-        // Column(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        //   children: [
-        //     CircularProgressIndicator(),
-        //     SizedBox(height: 10),
-        //     Text('Loading...')
-        //   ],
-        // ),
         OptionsScreen(),
       ],
     );
   }
 }
+
+// bool checkVideo() {
+//   // Implement your calls inside these conditions' bodies :
+//   if (YoutubePlayer.Value.position == duration(seconds: 0, minutes: 0, hours: 0)) {
+//     return true;
+//   } else
+//     return false;
+//}

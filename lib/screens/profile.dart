@@ -1,6 +1,10 @@
 import 'dart:ffi';
-
+import 'package:getwidget/getwidget.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+const _url = 'https://wa.me/918979571089 ';
 
 class Profile extends StatefulWidget {
   @override
@@ -10,84 +14,90 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Scaffold(
+        body: Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/concert.jpg'),
+          //image: AssetImage("assets/images/sg.png"),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Text(''),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GFButton(
+                  onPressed: () {
+                    Share.share(
+                        'check out my game app https://play.google.com/store/apps/details?id=com.khopdi.flipout',
+                        subject: 'Look what I made!');
+                  },
+                  text: "Share more with Shreya Ghoshal fans",
+                  textStyle: TextStyle(fontSize: 16, color: Colors.black),
+                  buttonBoxShadow: true,
+                  icon: Icon(Icons.share_rounded),
+                  shape: GFButtonShape.pills,
+                  color: Colors.deepPurple[200],
+                  size: 50,
+                  splashColor: Colors.deepPurpleAccent,
+                  //fullWidthButton: true,
+                  blockButton: true,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GFButton(
+                  onPressed: () {},
+                  text: "Rate this app",
+                  textStyle: TextStyle(fontSize: 20, color: Colors.black),
 
-            //s
-            Text(
-              'Sign in to get the most of Neverthink',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 30),
-            Text(
-              'Create an account to like videos, add favorite channels and more',
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 30),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.white, // background
-                  onPrimary: Colors.black,
-                ), // foreground
-                onPressed: () {},
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(
-                    child: Row(
-                      children: [
-                        Icon(Icons.access_alarm),
-                        Text(
-                          'Continue with Google',
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                  ),
-                )),
-            SizedBox(height: 20),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue, // background
-                  onPrimary: Colors.black,
-                ), // foreground
-                onPressed: () {},
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(
-                    child: Row(
-                      children: [
-                        Icon(Icons.ac_unit),
-                        Text(
-                          'Continue with Facebook',
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                  ),
-                )),
-            TextButton(
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.grey),
-              ),
-              onPressed: () {},
-              child: Text('Continue with Email'),
-            ),
+                  icon: Icon(Icons.star_purple500_outlined),
+                  shape: GFButtonShape.pills,
+                  color: Colors.pink[100],
+                  size: 50,
+                  splashColor: Colors.pinkAccent,
+                  // fullWidthButton: true,
 
-            Text(
-              'By continuing you agree to our Terms of Service',
-              textAlign: TextAlign.center,
+                  blockButton: true,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GFButton(
+                  onPressed: _launchURL,
+                  text: "Contact me!",
+                  textStyle: TextStyle(fontSize: 20, color: Colors.black),
+                  icon: Icon(Icons.call),
+
+                  shape: GFButtonShape.pills,
+                  color: Colors.green,
+                  size: 50,
+                  splashColor: Colors.green[800],
+                  //fullWidthButton: true,
+                  blockButton: true,
+                ),
+              ],
             ),
           ],
         ),
       ),
-    );
+    ));
   }
 }
+
+void _launchURL() async =>
+    await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';

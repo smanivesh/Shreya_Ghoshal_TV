@@ -7,56 +7,14 @@ import 'package:tiktok_clone/screens/new_home_screen.dart';
 import 'package:tiktok_clone/screens/profile.dart';
 import 'package:tiktok_clone/screens/search_screen.dart';
 
-// class Nav extends StatefulWidget {
-//   @override
-//   _NavState createState() => _NavState();
-// }
-
-// class _NavState extends State<Nav> {
-//   int _selectedIndex = 0;
-//   List<Widget> _widgetOptions = <Widget>[
-//     HomePageTry(),
-//     // HomePage(),
-//     SearchScreen(),
-//     // Text('Search'),
-//     Profile(),
-//     // Text('Profile'),
-//   ];
-
-//   void _onItemTap(int index) {
-//     setState(() {
-//       _selectedIndex = index;
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: _widgetOptions.elementAt(_selectedIndex),
-//       ),
-//       bottomNavigationBar: BottomNavigationBar(
-//         backgroundColor: Colors.transparent.withOpacity(1),
-//         showSelectedLabels: false,
-//         showUnselectedLabels: false,
-//         items: const <BottomNavigationBarItem>[
-//           BottomNavigationBarItem(icon: Icon(Icons.tv), label: 'IGTV'),
-//           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-//           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-//         ],
-//         currentIndex: _selectedIndex,
-//         onTap: _onItemTap,
-//       ),
-//     );
-//   }
-// }
-
 class Nav extends StatefulWidget {
   @override
   _NavState createState() => _NavState();
 }
 
 class _NavState extends State<Nav> {
+  // final _pageViewController = PageController();
+
   List<Widget> _widgetOptions = <Widget>[
     //HomePageTry(),
     NewHome(),
@@ -64,6 +22,7 @@ class _NavState extends State<Nav> {
     Profile(),
   ];
   int _page = 0;
+
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   @override
@@ -75,12 +34,12 @@ class _NavState extends State<Nav> {
           height: 50.0,
           items: <Widget>[
             Icon(
-              Icons.tv,
+              Icons.live_tv_rounded,
               size: 25,
               color: Colors.black,
             ),
             Icon(
-              Icons.search,
+              Icons.campaign,
               size: 25,
               color: Colors.black,
             ),
@@ -97,6 +56,8 @@ class _NavState extends State<Nav> {
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 500),
           onTap: (index) {
+            // _pageViewController.animateToPage(index,
+            //     duration: Duration(milliseconds: 200), curve: Curves.bounceOut);
             setState(() {
               _page = index;
             });
