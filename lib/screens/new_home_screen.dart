@@ -71,7 +71,7 @@ class _NewHomeState extends State<NewHome> {
               itemCount: data.length,
               duration: 15000,
               scrollDirection: Axis.vertical,
-              //  autoplay: true,
+              autoplay: false,
               itemBuilder: (BuildContext context, int index) {
                 index = generateRandomIndex();
                 return PlayScreen(

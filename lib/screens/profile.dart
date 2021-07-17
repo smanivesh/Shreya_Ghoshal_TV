@@ -18,8 +18,8 @@ class _ProfileState extends State<Profile> {
         body: Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/concert.jpg'),
-          //image: AssetImage("assets/images/sg.png"),
+          //image: AssetImage('assets/images/concert.jpg'),
+          image: AssetImage("assets/images/sg.png"),
           fit: BoxFit.cover,
         ),
       ),
