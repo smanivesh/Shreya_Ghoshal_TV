@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1099215173268",
+    "project_id": "shreya-ghoshal-tv-367ed",
+    "storage_bucket": "shreya-ghoshal-tv-367ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1099215173268:android:769d55eb83ae94de166681",
+        "android_client_info": {
+          "package_name": "com.example.tiktok_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1099215173268-nus8j8g47andnij1rpj1s4ip8ij598dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDygvqB_MC6cY1hNKKihmnTRaDSTIrEc9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1099215173268-nus8j8g47andnij1rpj1s4ip8ij598dt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

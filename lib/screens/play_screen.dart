@@ -20,15 +20,16 @@ class _PlayScreenState extends State<PlayScreen> {
 
   void runYoutubePlayer() {
     _controller = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId(widget.src),
-      flags: YoutubePlayerFlags(
-        enableCaption: false,
-        isLive: false,
-        autoPlay: true,
-        disableDragSeek: true,
-        hideControls: false,
-      ),
-    );
+        initialVideoId: YoutubePlayer.convertUrlToId(widget.src),
+        flags: YoutubePlayerFlags(
+          enableCaption: false,
+          isLive: false,
+          autoPlay: true,
+          disableDragSeek: true,
+          hideControls: false,
+          loop: true,
+          endAt: 0,
+        ));
   }
 
   @override
@@ -62,6 +63,7 @@ class _PlayScreenState extends State<PlayScreen> {
               isExpanded: true,
             ),
             RemainingDuration(),
+
             SizedBox(
               height: 35,
               width: 10,

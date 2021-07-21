@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:tiktok_clone/screens/home_page.dart';
-import 'package:tiktok_clone/screens/home_pageTry.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:tiktok_clone/screens/new_home_screen.dart';
-//import 'package:tiktok_clone/screens/home_page_try.dart';
 import 'package:tiktok_clone/screens/profile.dart';
 import 'package:tiktok_clone/screens/search_screen.dart';
 

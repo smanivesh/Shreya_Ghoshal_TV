@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:share/share.dart';
-import 'package:tiktok_clone/screens/like_icon.dart';
 
 class OptionsScreen extends StatelessWidget {
   @override

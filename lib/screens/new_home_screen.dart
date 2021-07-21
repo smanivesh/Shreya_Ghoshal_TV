@@ -33,6 +33,7 @@ class _NewHomeState extends State<NewHome> {
     jsonData.forEach((element) {
       DataModel dataModel = new DataModel();
       dataModel.videoUrl = element['video_url'];
+      dataModel.movieVideoUrl = element['movie_video_url'];
       tempData.add(dataModel);
     });
     setState(() {
