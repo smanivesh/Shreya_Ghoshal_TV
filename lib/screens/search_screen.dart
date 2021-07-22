@@ -1,4 +1,4 @@
-import 'dart:ffi';
+// import 'dart:ffi';
 import 'package:tiktok_clone/screens/data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -115,20 +115,22 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
+    int length = data.length;
     return Scaffold(
       body: SafeArea(
         child: Container(
-          child: Swiper(
-              itemCount: data.length,
+          child: length > 0 ? Swiper(
+              itemCount: length,
               duration: 15000,
               scrollDirection: Axis.vertical,
               autoplay: false,
+              // control: new SwiperControl(),
               itemBuilder: (BuildContext context, int index) {
                 index = generateRandomIndex();
                 return PlayScreen(
                   src: data[index].movieVideoUrl,
                 );
-              }),
+              }): null,
         ),
       ),
     );

@@ -65,20 +65,22 @@ class _NewHomeState extends State<NewHome> {
 
   @override
   Widget build(BuildContext context) {
+    int length = data.length;
     return Scaffold(
       body: SafeArea(
         child: Container(
-          child: Swiper(
-              itemCount: data.length,
+          child: length > 0 ? Swiper(
+              itemCount: length,
               duration: 15000,
               scrollDirection: Axis.vertical,
               autoplay: false,
+              // control: new SwiperControl(),
               itemBuilder: (BuildContext context, int index) {
                 index = generateRandomIndex();
                 return PlayScreen(
                   src: data[index].videoUrl,
                 );
-              }),
+              }) : null,
         ),
       ),
     );

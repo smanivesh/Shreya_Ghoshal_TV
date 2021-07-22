@@ -1,4 +1,4 @@
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -8,7 +8,6 @@ import 'package:provider/provider.dart';
 import 'package:tiktok_clone/ad_state.dart';
 import 'package:tiktok_clone/screens/nav_bar.dart';
 //import 'package:tiktok_clone/screens/home_page.dart';
-//import 'dart:ffi';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 const AndroidNotificationChannel channel = AndroidNotificationChannel(

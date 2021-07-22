@@ -1,4 +1,4 @@
-import 'dart:ffi';
+// import 'dart:ffi';
 import 'package:getwidget/getwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
