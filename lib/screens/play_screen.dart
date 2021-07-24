@@ -6,8 +6,8 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class PlayScreen extends StatefulWidget {
   final String src;
-
-  const PlayScreen({Key key, this.src, this.url}) : super(key: key);
+  final Function onEnd;
+  const PlayScreen({Key key, this.src, this.url, this.onEnd}) : super(key: key);
   //PlayScreen({this.url});
   final url;
 
@@ -27,7 +27,8 @@ class _PlayScreenState extends State<PlayScreen> {
           autoPlay: true,
           disableDragSeek: true,
           hideControls: false,
-          loop: true,
+          // loop: true,
+          loop: false,
           endAt: 0,
         ));
   }
@@ -70,7 +71,8 @@ class _PlayScreenState extends State<PlayScreen> {
             ),
           ],
           onEnded: (data) {
-            print("Next Video Started!");
+            // print("Next Video Started!");
+            widget.onEnd(data);
           },
         ),
         OptionsScreen(),

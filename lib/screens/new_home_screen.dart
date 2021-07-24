@@ -63,22 +63,31 @@ class _NewHomeState extends State<NewHome> {
     return PlayScreen(src: data[index].videoUrl);
   }
 
+  SwiperController controller = new SwiperController();
+  void onVideoEnd(data) {
+    print('NEW_HOME_SCREEN:: Video ended, Next video');
+    controller.next();
+  }
+
   @override
   Widget build(BuildContext context) {
+    int length = data.length;
     return Scaffold(
       body: SafeArea(
         child: Container(
-          child: Swiper(
-              itemCount: data.length,
-              duration: 15000,
-              scrollDirection: Axis.vertical,
-              autoplay: false,
-              itemBuilder: (BuildContext context, int index) {
-                index = generateRandomIndex();
-                return PlayScreen(
-                  src: data[index].videoUrl,
-                );
-              }),
+          child: length > 0
+              ? Swiper(
+                  itemCount: length,
+                  duration: 500,
+                  scrollDirection: Axis.vertical,
+                  autoplay: false,
+                  controller: controller,
+                  itemBuilder: (BuildContext context, int index) {
+                    index = generateRandomIndex();
+                    return PlayScreen(
+                        src: data[index].videoUrl, onEnd: onVideoEnd);
+                  })
+              : null,
         ),
       ),
     );
