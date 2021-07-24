@@ -1,4 +1,4 @@
-import 'dart:ffi';
+//import 'dart:ffi';
 import 'package:getwidget/getwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
@@ -36,13 +36,15 @@ class _ProfileState extends State<Profile> {
                         'check out my game app https://play.google.com/store/apps/details?id=com.khopdi.flipout',
                         subject: 'Look what I made!');
                   },
-                  text: "Share more with Shreya Ghoshal fans",
-                  textStyle: TextStyle(fontSize: 16, color: Colors.black),
+                  text: "   Share more with fans",
+                  textStyle: TextStyle(fontSize: 20, color: Colors.black),
                   buttonBoxShadow: true,
                   icon: Icon(Icons.share_rounded),
+
                   shape: GFButtonShape.pills,
-                  color: Colors.deepPurple[200],
+                  color: Colors.yellow[200],
                   size: 50,
+                  autofocus: true,
                   splashColor: Colors.deepPurpleAccent,
                   //fullWidthButton: true,
                   blockButton: true,
@@ -57,13 +59,14 @@ class _ProfileState extends State<Profile> {
               children: [
                 GFButton(
                   onPressed: () {},
-                  text: "Rate this app",
-                  textStyle: TextStyle(fontSize: 20, color: Colors.black),
+                  text: "⭐⭐⭐⭐⭐   Rate us",
+                  textStyle: TextStyle(fontSize: 20, color: Colors.yellow),
 
-                  icon: Icon(Icons.star_purple500_outlined),
+                  // icon: Icon(Icons.star_purple500_outlined),
                   shape: GFButtonShape.pills,
-                  color: Colors.pink[100],
+                  color: Colors.brown[900],
                   size: 50,
+                  autofocus: true,
                   splashColor: Colors.pinkAccent,
                   // fullWidthButton: true,
 
@@ -79,14 +82,14 @@ class _ProfileState extends State<Profile> {
               children: [
                 GFButton(
                   onPressed: _launchURL,
-                  text: "Contact me!",
-                  textStyle: TextStyle(fontSize: 20, color: Colors.black),
-                  icon: Icon(Icons.call),
-
+                  text: "  Contact me!",
+                  textStyle: TextStyle(fontSize: 20, color: Colors.green[900]),
+                  icon: ImageIcon(AssetImage("assets/images/whatsapp.png")),
                   shape: GFButtonShape.pills,
-                  color: Colors.green,
+                  color: Colors.yellow[100],
                   size: 50,
-                  splashColor: Colors.green[800],
+                  autofocus: true,
+                  splashColor: Colors.yellow[100],
                   //fullWidthButton: true,
                   blockButton: true,
                 ),
