@@ -47,7 +47,9 @@ class _NavState extends State<Nav> {
             ),
           ],
           color: Colors.white,
-          backgroundColor: Colors.transparent.withOpacity(0.5),
+
+          backgroundColor: Colors.black,
+          // backgroundColor: Colors.transparent.withOpacity(0.5),
           buttonBackgroundColor: Colors.white,
           // backgroundColor: Colors.brown,
           animationCurve: Curves.easeInOut,
