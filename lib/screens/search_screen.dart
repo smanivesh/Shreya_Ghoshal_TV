@@ -113,6 +113,12 @@ class _SearchScreenState extends State<SearchScreen> {
     return PlayScreen(src: data[index].movieVideoUrl);
   }
 
+  SwiperController controller = new SwiperController();
+  void onVideoEnd(data) {
+    print('NEW_HOME_SCREEN:: Video ended, Next video');
+    controller.next();
+  }
+
   @override
   Widget build(BuildContext context) {
     int length = data.length;
