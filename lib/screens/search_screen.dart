@@ -128,14 +128,14 @@ class _SearchScreenState extends State<SearchScreen> {
           child: length > 0
               ? Swiper(
                   itemCount: length,
-                  duration: 15000,
+                  duration: 500,
                   scrollDirection: Axis.vertical,
                   autoplay: false,
-                  // control: new SwiperControl(),
+                  controller: controller,
                   itemBuilder: (BuildContext context, int index) {
                     index = generateRandomIndex();
                     return PlayScreen(
-                      src: data[index].movieVideoUrl,
+                      src: data[index].movieVideoUrl, onEnd: onVideoEnd,
                     );
                   })
               : null,
