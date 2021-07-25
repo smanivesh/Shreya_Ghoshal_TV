@@ -14,7 +14,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
   'high_importance_channel', //id,
   'High Importance Notification', // title
-  'This channel is used for importanr notification', //description
+  'This channel is used for important notification', //description
   importance: Importance.high,
   playSound: true,
 );
