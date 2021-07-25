@@ -1,9 +1,9 @@
 // import 'dart:ffi';
 import 'package:tiktok_clone/screens/data_model.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:tiktok_clone/ad_state.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+//import 'package:provider/provider.dart';
+// import 'package:tiktok_clone/ad_state.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -77,7 +77,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   getDataFromSheet() async {
     var raw = await http.get(
-        'https://script.google.com/macros/s/AKfycbwu6L8V_wC0kyBzWaIuFjrx9dx8qRskCvz0TmUGccnpWi40fCo/exec');
+        'https://script.google.com/macros/s/AKfycbzHqPl0QMbc8qVaduwh0DthiHdSahDSOKLJUBNo78CLvUjcGGOD/exec');
 
     var jsonData = convert.jsonDecode(raw.body);
     List<DataModel> tempData = List<DataModel>();
@@ -97,20 +97,10 @@ class _SearchScreenState extends State<SearchScreen> {
     super.initState();
   }
 
-  //@override
-  //void next(){bool animation: true}
-
   int generateRandomIndex() {
     var random = new Random();
     int index = random.nextInt(data.length);
-    randIndexList(index);
     return index;
-  }
-
-  //function to change to next video. Function is called from youtube Meta data, onend youtube+player.dart
-  PlayScreen changeNextVideo() {
-    int index = generateRandomIndex();
-    return PlayScreen(src: data[index].movieVideoUrl);
   }
 
   SwiperController controller = new SwiperController();
@@ -127,15 +117,18 @@ class _SearchScreenState extends State<SearchScreen> {
         child: Container(
           child: length > 0
               ? Swiper(
+                  // itemCount: length,
                   itemCount: length,
                   duration: 500,
                   scrollDirection: Axis.vertical,
                   autoplay: false,
+                  loop: true,
                   controller: controller,
                   itemBuilder: (BuildContext context, int index) {
                     index = generateRandomIndex();
                     return PlayScreen(
-                      src: data[index].movieVideoUrl, onEnd: onVideoEnd,
+                      src: data[index].movieVideoUrl,
+                      onEnd: onVideoEnd,
                     );
                   })
               : null,
