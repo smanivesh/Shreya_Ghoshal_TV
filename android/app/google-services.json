@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1099215173268",
-    "project_id": "shreya-ghoshal-tv-367ed",
-    "storage_bucket": "shreya-ghoshal-tv-367ed.appspot.com"
+    "project_number": "374498574792",
+    "project_id": "shreya-ghoshal-tv-ae626",
+    "storage_bucket": "shreya-ghoshal-tv-ae626.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1099215173268:android:769d55eb83ae94de166681",
+        "mobilesdk_app_id": "1:374498574792:android:7cc0c5f62409dc9a7f40fd",
         "android_client_info": {
-          "package_name": "com.example.tiktok_clone"
+          "package_name": "com.khopdi.sg_tv"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1099215173268-nus8j8g47andnij1rpj1s4ip8ij598dt.apps.googleusercontent.com",
+          "client_id": "374498574792-kihmk9d4mi05e61qv7840imgsojdkog1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDygvqB_MC6cY1hNKKihmnTRaDSTIrEc9E"
+          "current_key": "AIzaSyBMQ3hcf2gijYj25JNBEYPUaiaIP58hh3c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1099215173268-nus8j8g47andnij1rpj1s4ip8ij598dt.apps.googleusercontent.com",
+              "client_id": "374498574792-kihmk9d4mi05e61qv7840imgsojdkog1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

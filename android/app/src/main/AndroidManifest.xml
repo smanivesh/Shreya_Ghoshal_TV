@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tiktok_clone">
+    package="com.khopdi.sg_tv">
    <application
         android:label="Shreya Ghoshal TV"
         android:icon="@mipmap/sg_icon">

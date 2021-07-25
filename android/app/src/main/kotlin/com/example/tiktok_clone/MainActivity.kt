@@ -1,4 +1,4 @@
-package com.example.tiktok_clone
+package com.khopdi.sg_tv
 
 import io.flutter.embedding.android.FlutterActivity
 
