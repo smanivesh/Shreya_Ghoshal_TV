@@ -1,4 +1,3 @@
-// import 'dart:ffi';
 import 'package:getwidget/getwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
@@ -19,13 +18,13 @@ class _ProfileState extends State<Profile> {
       decoration: BoxDecoration(
         image: DecorationImage(
           //image: AssetImage('assets/images/concert.jpg'),
-          image: AssetImage("assets/images/sg.png"),
+          image: AssetImage("assets/images/music.png"),
           fit: BoxFit.cover,
         ),
       ),
       child: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -36,38 +35,64 @@ class _ProfileState extends State<Profile> {
                         'check out my game app https://play.google.com/store/apps/details?id=com.khopdi.flipout',
                         subject: 'Look what I made!');
                   },
-                  text: " Share more with fans",
-                  textStyle: TextStyle(fontSize: 20, color: Colors.black),
+                  text: " Share with more fans",
+                  textStyle: TextStyle(fontSize: 20, color: Colors.white),
                   buttonBoxShadow: true,
                   icon: Icon(Icons.share_rounded),
 
                   shape: GFButtonShape.pills,
-                  color: Colors.white,
+                  color: Colors.deepOrange[400],
                   size: 50,
                   autofocus: true,
-                  splashColor: Colors.deepPurpleAccent,
+                  splashColor: Colors.purple,
                   //fullWidthButton: true,
                   blockButton: true,
                 ),
               ],
             ),
             SizedBox(
-              height: 50,
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GFButton(
+                  onPressed: _launchURL,
+                  text: "  Contact Me!",
+                  textStyle: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                  // icon: ImageIcon(AssetImage("assets/images/whatsapp.png")),
+                  icon: Icon(Icons.message),
+                  shape: GFButtonShape.pills,
+                  color: Colors.pink[800],
+                  size: 50,
+                  autofocus: true,
+                  splashColor: Colors.lightBlue,
+                  //fullWidthButton: true,
+
+                  blockButton: true,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GFButton(
                   onPressed: () {},
-                  text: "⭐⭐⭐⭐⭐   Rate us",
+                  text: "⭐⭐⭐⭐⭐   Rate Us",
                   textStyle: TextStyle(fontSize: 20, color: Colors.yellow),
 
                   // icon: Icon(Icons.star_purple500_outlined),
                   shape: GFButtonShape.pills,
-                  color: Colors.brown[900],
+                  color: Colors.green[900],
                   size: 50,
                   autofocus: true,
-                  splashColor: Colors.pinkAccent,
+                  splashColor: Colors.teal,
                   // fullWidthButton: true,
 
                   blockButton: true,
@@ -75,25 +100,7 @@ class _ProfileState extends State<Profile> {
               ],
             ),
             SizedBox(
-              height: 50,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GFButton(
-                  onPressed: _launchURL,
-                  text: "  Contact me!",
-                  textStyle: TextStyle(fontSize: 20, color: Colors.green[900]),
-                  icon: ImageIcon(AssetImage("assets/images/whatsapp.png")),
-                  shape: GFButtonShape.pills,
-                  color: Colors.white,
-                  size: 50,
-                  autofocus: true,
-                  splashColor: Colors.green,
-                  //fullWidthButton: true,
-                  blockButton: true,
-                ),
-              ],
+              height: 60,
             ),
           ],
         ),

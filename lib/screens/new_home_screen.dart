@@ -33,7 +33,7 @@ class _NewHomeState extends State<NewHome> {
     jsonData.forEach((element) {
       DataModel dataModel = new DataModel();
       dataModel.videoUrl = element['video_url'];
-      dataModel.movieVideoUrl = element['movie_video_url'];
+      //dataModel.movieVideoUrl = element['movie_video_url'];
       tempData.add(dataModel);
     });
     setState(() {
@@ -57,12 +57,6 @@ class _NewHomeState extends State<NewHome> {
     return index;
   }
 
-  //function to change to next video. Function is called from youtube Meta data, onend youtube+player.dart
-  PlayScreen changeNextVideo() {
-    int index = generateRandomIndex();
-    return PlayScreen(src: data[index].videoUrl);
-  }
-
   SwiperController controller = new SwiperController();
   void onVideoEnd(data) {
     print('NEW_HOME_SCREEN:: Video ended, Next video');
@@ -81,6 +75,7 @@ class _NewHomeState extends State<NewHome> {
                   duration: 500,
                   scrollDirection: Axis.vertical,
                   autoplay: false,
+                  loop: true,
                   controller: controller,
                   itemBuilder: (BuildContext context, int index) {
                     index = generateRandomIndex();
